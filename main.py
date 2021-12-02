@@ -1,10 +1,11 @@
 from math import tan,pi
 import time
 def decorator(func):
-    print("Была вызвана функция{}".format(func))
+    print("Была вызвана функция {}".format(func.__name__))
+    timebefor=time.time()
     func()
-    print(time.perf_counter())
-
+    timeafter=time.time()
+    print("времени затрачено", round(timeafter-timebefor), " sec")
 def vi():
     print("введите переменные s,n")
     s = int(input("s: "))
